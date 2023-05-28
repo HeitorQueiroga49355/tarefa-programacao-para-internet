@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %}Listagem de Posts{% endblock %}
+{%block content %}
+<h1>Lista de locacoes</h1>
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>titulo</th>
+        <th>valor</th>
+        <th>categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for filme in filmes%}
+      <tr>
+        <td> {{filme.titulo}} </td>
+        <td> {{filme.valor}} </td>
+        <td> {{filme.categoria.nome}} </td>
+      </tr>
+      {%empty%} {%endfor%}
+    </tbody>
+  </table>
+</main>
+{% endblock %}

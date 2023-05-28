@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block title %}Listagem de Posts{% endblock %}
+{%block content %}
+<h1>Lista de locacoes</h1>
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>nome</th>
+        <th>data</th>
+        <th>cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for locacao in locacoes%}
+      <tr>
+        <td> {{locacao.nome}} </td>
+        <td> {{locacao.data}} </td>
+        <td> {{locacao.cliente.nome}} </td>
+      </tr>
+      {%empty%} {%endfor%}
+    </tbody>
+  </table>
+</main>
+{% endblock %}
